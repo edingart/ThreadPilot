@@ -1,6 +1,7 @@
 <Solution>
   <Folder Name="/Solution Items/">
     <File Path=".editorconfig" />
+    <File Path="README.md" />
   </Folder>
   <Project Path="ThreadPilot.Contracts/ThreadPilot.Contracts.csproj" Id="42cae147-566e-4cee-b7ce-2b7f1117f926" />
   <Project Path="ThreadPilot.Insurance/ThreadPilot.Insurance.csproj" />

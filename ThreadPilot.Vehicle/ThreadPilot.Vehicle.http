@@ -1,0 +1,11 @@
+@ThreadPilot.Vehicle_HostAddress = https://localhost:7148
+
+GET {{ThreadPilot.Vehicle_HostAddress}}/vehicles/abc123
+Accept: application/json
+
+###
+
+GET {{ThreadPilot.Vehicle_HostAddress}}/vehicles/efg468
+Accept: application/json
+
+###

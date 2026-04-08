@@ -1,0 +1,13 @@
+@ThreadPilot.Insurance_HostAddress = https://localhost:7036
+
+GET {{ThreadPilot.Insurance_HostAddress}}/insurances/800404-3025
+Accept: application/json
+
+###
+GET {{ThreadPilot.Insurance_HostAddress}}/insurances/920123-4052
+Accept: application/json
+
+###
+
+GET {{ThreadPilot.Insurance_HostAddress}}/insurances/750101-1234
+Accept: application/json
