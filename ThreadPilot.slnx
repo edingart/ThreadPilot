@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+  </Folder>
+  <Project Path="ThreadPilot.Contracts/ThreadPilot.Contracts.csproj" Id="42cae147-566e-4cee-b7ce-2b7f1117f926" />
+  <Project Path="ThreadPilot.Insurance/ThreadPilot.Insurance.csproj" />
+  <Project Path="ThreadPilot.Test/ThreadPilot.Test.csproj" Id="dc2695b0-d4c5-4c5c-bca9-595d2853c45d" />
+  <Project Path="ThreadPilot.Vehicle/ThreadPilot.Vehicle.csproj" />
+</Solution>
