@@ -28,7 +28,7 @@ public class InsuranceTestRepository : IInsuranceRepository
                     Number = "1515313131",
                     Type = "Personal Health",
                     ValidUntil = DateTime.UtcNow.AddMonths(10),
-                    Price = 6000
+                    Price = 600
                 },
                 new Entities.Insurance
                 {
@@ -36,7 +36,7 @@ public class InsuranceTestRepository : IInsuranceRepository
                     Number = "1016513215",
                     Type = "Car",
                     ValidUntil = DateTime.UtcNow.AddMonths(7),
-                    Price = 1300,
+                    Price = 130,
                     VehicleRegistrationNumber = "ABC123"
                 }
             }
@@ -50,7 +50,7 @@ public class InsuranceTestRepository : IInsuranceRepository
                     Number = "4528126575",
                     Type = "Pet",
                     ValidUntil = DateTime.UtcNow.AddMonths(10),
-                    Price = 6000
+                    Price = 600
                 },
                 new Entities.Insurance
                 {
@@ -58,7 +58,7 @@ public class InsuranceTestRepository : IInsuranceRepository
                     Number = "1258935648",
                     Type = "Car",
                     ValidUntil = DateTime.UtcNow.AddMonths(9),
-                    Price = 1500,
+                    Price = 150,
                     VehicleRegistrationNumber = "EFG468"
                 },
                 new Entities.Insurance
@@ -67,7 +67,7 @@ public class InsuranceTestRepository : IInsuranceRepository
                     Number = "7525423286",
                     Type = "Home",
                     ValidUntil = DateTime.UtcNow.AddMonths(11),
-                    Price = 2600
+                    Price = 260
                 }
             }
         },
@@ -80,7 +80,7 @@ public class InsuranceTestRepository : IInsuranceRepository
                     Number = "7894561230",
                     Type = "Home",
                     ValidUntil = DateTime.UtcNow.AddMonths(1),
-                    Price = 2100
+                    Price = 210
                 }
             }
         }
