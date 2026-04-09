@@ -1,6 +1,7 @@
 ﻿using System.Text.Json.Serialization;
 
 namespace ThreadPilot.Contracts;
+
 public class InsuranceDto
 {
     public required string Number { get; set; }

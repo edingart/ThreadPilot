@@ -1,4 +1,5 @@
 ﻿namespace ThreadPilot.Insurance.Options;
+
 public sealed class VehicleApiSettings
 {
     public required string BaseUrl { get; set; }

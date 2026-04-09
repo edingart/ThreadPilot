@@ -1,6 +1,7 @@
 ﻿using ThreadPilot.Vehicle.Repositories.Interfaces;
 
 namespace ThreadPilot.Vehicle.Repositories;
+
 public class VehicleRepository : IVehicleRepository
 {
     public Task<Entities.Vehicle?> GetVehicleAsync(string registrationNumber)

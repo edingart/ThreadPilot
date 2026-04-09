@@ -16,5 +16,5 @@ Nothing was particularly challenging, but I found it interesting to very quickly
 I have worked on several projects where I had to design and implement a RESTful API using ASP.NET Core, and I have experience with Entity Framework Core for data access. I have also worked on projects that required me to design the applications that needed to be easily changed and/or extensible for future features.
 If I had more time I'd start by implementing:
 - Added some security features, such as authentication and authorization, to protect the API endpoints and ensure that only authorized users can access the data.
-- Implementing a more robust error handling mechanism, such as using a global exception handler.
+- Implementing a more robust error handling mechanism, such as using a global exception handler and Problem Details.
 - Added SqLite or another lightweight database to persist the data instead of using in-memory collections.

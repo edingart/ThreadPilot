@@ -5,6 +5,7 @@ using ThreadPilot.Insurance.Services;
 using ThreadPilot.Insurance.Services.Interfaces;
 
 namespace ThreadPilot.Test.UnitTests.Insurance;
+
 public class InsuranceServiceTests
 {
     private readonly Mock<IInsuranceRepository> _repositoryMock;
@@ -19,15 +20,15 @@ public class InsuranceServiceTests
     }
 
     [Theory]
-    [InlineData(null!)]
+    [InlineData(null)]
     [InlineData("")]
     [InlineData("1234567890")]     // too short
     [InlineData("123456789012")]   // too long
     [InlineData("1234567890A")]    // wrong separator
-    public async Task GetInsurancesByPersonNumberAsync_InvalidPersonNumber_ThrowsArgumentException(string personNumber)
+    public async Task GetInsurancesByPersonNumberAsync_InvalidPersonNumber_ThrowsArgumentException(string? personNumber)
     {
         // Act
-        async Task Act() => await _sut.GetInsurancesByPersonNumberAsync(personNumber);
+        async Task Act() => await _sut.GetInsurancesByPersonNumberAsync(personNumber!);
 
         // Assert
         var ex = await Assert.ThrowsAsync<ArgumentException>(Act);
@@ -60,7 +61,7 @@ public class InsuranceServiceTests
         var personNumber = "901231-1234";
         _repositoryMock
             .Setup(r => r.GetInsurancesForPersonAsync(personNumber))
-            .ReturnsAsync(new List<ThreadPilot.Insurance.Entities.Insurance>());
+            .ReturnsAsync([]);
 
         // Act
         var result = await _sut.GetInsurancesByPersonNumberAsync(personNumber);
@@ -90,7 +91,7 @@ public class InsuranceServiceTests
 
         _repositoryMock
             .Setup(r => r.GetInsurancesForPersonAsync(personNumber))
-            .ReturnsAsync(new List<ThreadPilot.Insurance.Entities.Insurance> { insurance });
+            .ReturnsAsync([insurance]);
 
         // Act
         var result = await _sut.GetInsurancesByPersonNumberAsync(personNumber);
@@ -132,7 +133,7 @@ public class InsuranceServiceTests
 
         _repositoryMock
             .Setup(r => r.GetInsurancesForPersonAsync(personNumber))
-            .ReturnsAsync(new List<ThreadPilot.Insurance.Entities.Insurance> { insurance });
+            .ReturnsAsync([insurance]);
 
         _vehicleServiceMock
             .Setup(v => v.GetVehicleAsync("ABC123"))
@@ -142,6 +143,8 @@ public class InsuranceServiceTests
         var result = await _sut.GetInsurancesByPersonNumberAsync(personNumber);
 
         // Assert
+        Assert.NotNull(result);
+
         var dto = Assert.Single(result);
         Assert.NotNull(dto.VehicleData);
         Assert.Equal("Volvo", dto.VehicleData.Brand);
@@ -169,7 +172,7 @@ public class InsuranceServiceTests
 
         _repositoryMock
             .Setup(r => r.GetInsurancesForPersonAsync(personNumber))
-            .ReturnsAsync(new List<ThreadPilot.Insurance.Entities.Insurance> { insurance });
+            .ReturnsAsync([insurance]);
 
         _vehicleServiceMock
             .Setup(v => v.GetVehicleAsync("XYZ987"))
@@ -179,6 +182,8 @@ public class InsuranceServiceTests
         var result = await _sut.GetInsurancesByPersonNumberAsync(personNumber);
 
         // Assert
+        Assert.NotNull(result);
+
         var dto = Assert.Single(result);
         Assert.NotNull(dto.VehicleData);
         Assert.Equal("Unknown", dto.VehicleData.Brand);

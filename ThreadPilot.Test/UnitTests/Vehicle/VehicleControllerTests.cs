@@ -7,6 +7,7 @@ using ThreadPilot.Vehicle.Controllers;
 using ThreadPilot.Vehicle.Repositories.Interfaces;
 
 namespace ThreadPilot.Test.UnitTests.Vehicle;
+
 public class VehiclesControllerTests
 {
     private readonly Mock<ILogger<VehiclesController>> loggerMock;
@@ -25,10 +26,10 @@ public class VehiclesControllerTests
     [InlineData("")]
     [InlineData(" ")]
     [InlineData("   ")]
-    public async Task GetAsync_RegistrationNumberMissing_ReturnsBadRequest(string registrationNumber)
+    public async Task GetAsync_RegistrationNumberMissing_ReturnsBadRequest(string? registrationNumber)
     {
         // Act
-        var result = await sut.GetAsync(registrationNumber);
+        var result = await sut.GetAsync(registrationNumber!);
 
         // Assert
         var badRequest = Assert.IsType<BadRequestObjectResult>(result.Result);

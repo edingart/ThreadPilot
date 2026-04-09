@@ -3,6 +3,7 @@ using ThreadPilot.Insurance.Repositories.Interfaces;
 using ThreadPilot.Insurance.Services.Interfaces;
 
 namespace ThreadPilot.Insurance.Services;
+
 public class InsuranceService : IInsuranceService
 {
     private readonly IInsuranceRepository repository;

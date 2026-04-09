@@ -1,4 +1,5 @@
 ﻿namespace ThreadPilot.Contracts;
+
 public class VehicleDto
 {
     public required string RegestrationNumber { get; set; }

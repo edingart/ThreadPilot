@@ -1,4 +1,5 @@
 ﻿namespace ThreadPilot.Vehicle.Entities;
+
 public class Vehicle
 {
     public required Guid Id { get; set; }

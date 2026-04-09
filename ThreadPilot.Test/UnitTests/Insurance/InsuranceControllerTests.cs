@@ -7,6 +7,7 @@ using ThreadPilot.Insurance.Controllers;
 using ThreadPilot.Insurance.Services.Interfaces;
 
 namespace ThreadPilot.Test.UnitTests.Insurance;
+
 public class InsurancesControllerTests
 {
     private readonly Mock<ILogger<InsurancesController>> loggerMock;
@@ -24,10 +25,10 @@ public class InsurancesControllerTests
     [InlineData(null)]
     [InlineData("")]
     [InlineData(" ")]
-    public async Task GetAsync_PersonNumberMissing_ReturnsBadRequest(string personNumber)
+    public async Task GetAsync_PersonNumberMissing_ReturnsBadRequest(string? personNumber)
     {
         // Act
-        var result = await sut.GetAsync(personNumber);
+        var result = await sut.GetAsync(personNumber!);
 
         // Assert
         var badRequest = Assert.IsType<BadRequestObjectResult>(result.Result);
@@ -67,15 +68,13 @@ public class InsurancesControllerTests
         var personNumber = "901231-1234";
         var insurances = new List<InsuranceDto>
         {
-            new InsuranceDto
-            {
+            new() {
                 Number = "INS-001",
                 Type = "Car",
                 ValidUntil = new DateOnly(2030, 12, 31),
                 Price = 1234
             },
-            new InsuranceDto
-            {
+            new() {
                 Number = "INS-002",
                 Type = "Home",
                 ValidUntil = new DateOnly(2031, 6, 30),

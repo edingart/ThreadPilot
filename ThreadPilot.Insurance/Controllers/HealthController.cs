@@ -10,7 +10,7 @@ public class HealthController : ControllerBase
 {
     [HttpGet]
     public IActionResult Get()
-    {         
+    {
         return Ok("Insurance API is healthy.");
     }
 }

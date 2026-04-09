@@ -40,7 +40,7 @@ public class VehiclesController : ControllerBase
             }
 
             return Ok(new VehicleDto()
-            { 
+            {
                 RegestrationNumber = vehicle.RegestrationNumber,
                 Brand = vehicle.Brand,
                 Model = vehicle.Model,

@@ -1,12 +1,13 @@
 ﻿using ThreadPilot.Insurance.Repositories.Interfaces;
 
 namespace ThreadPilot.Insurance.Repositories;
+
 public class InsuranceTestRepository : IInsuranceRepository
 {
     public Task<List<Entities.Insurance>?> GetInsurancesForPersonAsync(string personNumber)
     {
-        return Task.FromResult(insurancesByPersonNumber.TryGetValue(personNumber, out var insurances) 
-            ? insurances 
+        return Task.FromResult(insurancesByPersonNumber.TryGetValue(personNumber, out var insurances)
+            ? insurances
             : null);
     }
 

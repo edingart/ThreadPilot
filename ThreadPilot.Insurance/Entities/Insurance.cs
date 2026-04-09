@@ -1,4 +1,5 @@
 ﻿namespace ThreadPilot.Insurance.Entities;
+
 public class Insurance
 {
     public required Guid Id { get; set; }
